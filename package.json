@@ -1,0 +1,22 @@
+{
+  "name": "reactstart",
+  "version": "1.0.0",
+  "description": "react tt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamekasem/reactstart.git"
+  },
+  "author": "M.Tarbosh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamekasem/reactstart/issues"
+  },
+  "homepage": "https://github.com/mohamekasem/reactstart#readme",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
