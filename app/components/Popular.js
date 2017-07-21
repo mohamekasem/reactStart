@@ -1,4 +1,31 @@
 import React from 'react';
+import ProtoTypes from 'prop-types';
+
+
+//Stateless Component 
+function SelectedLanguage (props){
+	var languages = ['All','JavaScript','Ruby','Java','CSS','Python'];
+	return (
+			<ul className='languages'>
+			    {languages.map(function(lang){
+				  return (
+						<li style={lang === props.selectedLanguage ? {color: '#d0021b'}: null}
+						 	onClick={props.onSelect.bind(null, lang)}
+							key={lang}>
+								{lang}
+						</li>	
+					)
+				})}
+			</ul>
+		)
+}
+
+
+SelectedLanguage.ProtoTypes = {
+	selectedLanguage : ProtoTypes.string.isRequired,
+	onSelect : ProtoTypes.func.isRequired
+}
+
 
 class Popular extends React.Component {
 	constructor (props){
@@ -19,20 +46,14 @@ class Popular extends React.Component {
 	}
 
 	render(){
-		
-		var languages = ['All','JavaScript','Ruby','Java','CSS','Python'];
+
 		return (
-			<ul className='languages'>
-			    {languages.map(function(lang){
-				  return (
-						<li style={lang === this.state.selectedLanguage ? {color: '#d0021b'}: null}
-						 	onClick={this.updateLnguage.bind(null, lang)}
-							key={lang}>
-								{lang}
-						</li>	
-					)
-				},this)}
-			</ul>
+			<div>
+		<SelectedLanguage 
+		selectedLanguage = {this.state.selectedLanguage}
+		onSelect = {this.updateLnguage}
+		/>
+		</div>
 		)
 	}
 }
