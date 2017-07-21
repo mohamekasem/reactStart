@@ -3,37 +3,31 @@
   "version": "1.0.0",
   "description": "react tt",
   "main": "index.js",
-
-
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --hot"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mohamekasem/reactstart.git"
   },
-
   "babel": {
-    "presets": ["env", "react"]
+    "presets": [
+      "env",
+      "react"
+    ]
   },
-
   "author": "M.Tarbosh",
-
   "license": "ISC",
-
   "bugs": {
     "url": "https://github.com/mohamekasem/reactstart/issues"
   },
-
   "homepage": "https://github.com/mohamekasem/reactstart#readme",
-
   "dependencies": {
     "jquery": "^3.2.1",
+    "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
-
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.0.0",
