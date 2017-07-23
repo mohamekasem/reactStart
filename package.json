@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/mohamekasem/reactstart#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "jquery": "^3.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",

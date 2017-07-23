@@ -1,6 +1,6 @@
 import React from 'react';
 import ProtoTypes from 'prop-types';
-
+import api from '../utils/api';
 
 //Stateless Component 
 function SelectedLanguage (props){
@@ -31,10 +31,17 @@ class Popular extends React.Component {
 	constructor (props){
 		super(props);
 		this.state = {
-			selectedLanguage: 'All'
+			selectedLanguage: 'All',
+			repos: null
 		};
 		this.updateLnguage = this.updateLnguage.bind(this);
+	}
 
+	componentDidMount(){
+		api.fetchPopularRepos(this.state.selectedLanguage)
+			.then((res)=>{
+				console.log(res)
+		})
 	}
 
 	updateLnguage(lang){
