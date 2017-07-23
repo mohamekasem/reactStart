@@ -2,33 +2,9 @@ import React from 'react';
 import ProtoTypes from 'prop-types';
 import api from '../utils/api';
 import RepoGrid from './Repo-Grid';
+import SelectLanguage from './SelectLanguages';
 
-//Stateless Component 
-function SelectLanguage (props) {
-  var languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
-  return (
-    <ul className='languages'>
-      {languages.map(function (lang) {
-        return (
-          <li
-            style={lang === props.selectedLanguage ? {color: '#d0021b'} : null}
-            onClick={props.onSelect.bind(null, lang)}
-            key={lang}>
-              {lang}
-          </li>
-        )
-      })}
-    </ul>
-  )
-}
-
-SelectLanguage.protoTypes = {
-	selectedLanguage : ProtoTypes.string.isRequired,
-	onSelect : ProtoTypes.func.isRequired
-}
-
-
-class Popular extends React.Component {
+export default class Popular extends React.Component {
 	constructor (props){
 			super(props);
 			this.state = {
@@ -39,12 +15,11 @@ class Popular extends React.Component {
 	}
 
 	componentDidMount(){
-	this.updateLanguage(this.state.updateLanguage);		
+	this.updateLanguage(this.state.selectedLanguage);		
 	}
 
 	updateLanguage(lang){
 		this.setState(function(){
-			console.log(lang)
 			return {
 				selectedLanguage : lang,
 				repos: null
@@ -63,7 +38,6 @@ class Popular extends React.Component {
 
 
 	render(){
-		console.log('render invov')
 		return (
 			<div>
 		<SelectLanguage 
@@ -77,7 +51,13 @@ class Popular extends React.Component {
 		)
 	}
 }
-module.exports = Popular;
+
+
+
+
+
+
+
 
 // var React = require('react');
 // var PropTypes = require('prop-types');
