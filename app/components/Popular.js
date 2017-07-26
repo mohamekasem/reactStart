@@ -1,8 +1,8 @@
 import React from 'react';
 import ProtoTypes from 'prop-types';
 import api from '../utils/api';
-import RepoGrid from './Repo-Grid';
-import SelectLanguage from './SelectLanguages';
+import RepoGrid from './popular-dep/Repo-Grid';
+import SelectLanguage from './popular-dep/SelectLanguages';
 
 export default class Popular extends React.Component {
 	constructor (props){
