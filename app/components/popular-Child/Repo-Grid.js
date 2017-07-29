@@ -1,10 +1,10 @@
 import React from 'react';
 import ProtoTypes from 'prop-types';
 
-function RepoGrid (props) {
+const RepoGrid = (props)=> {
 	return (
 		<ul className='popular-list'>
-			{props.repos.map((repo, index)=>{
+			{props.repos.map((repo, index)=> {
 				return (
 					<li key={repo.name} className='popular-item'> 
 						<div className='popular-rank'>#{index + 1}</div>
@@ -39,4 +39,4 @@ RepoGrid.protoTypes = {
 }
 
 
-module.exports = RepoGrid;
+export default RepoGrid;

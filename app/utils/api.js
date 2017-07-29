@@ -37,9 +37,9 @@ function getUserData(player) {
 			getProfile(player),
 			getRepos(player)])
 		.then((data)=>{
+			console.log(data)
 			let profile = data[0];
 			let repos = data[1];
-
 			return {
 				profile: profile,
 				score: claculateScore(profile, repos)

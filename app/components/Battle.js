@@ -1,7 +1,9 @@
 import React from 'react';
-import PlayerInput from './Battle-Child/PlayerInput';
-import PlayerPreview from './Battle-Child/Player-Preview';
 import {Link} from 'react-router-dom';
+
+// import the child components
+import PlayerPreview from './Battle-Child/Player-Preview';
+import PlayerInput from './Battle-Child/PlayerInput';
 
 class Battle extends React.Component{
 	constructor(props) {

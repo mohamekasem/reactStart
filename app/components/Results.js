@@ -2,7 +2,12 @@ import React from 'react';
 import queryString from 'query-string';
 import api from '../utils/api';
 import {Link} from 'react-router-dom'
+
+// import child component
 import Player from './results-Child/Player'
+
+//import Reusable Component
+import Loading from './loading';
 
 class Results extends React.Component {
 	constructor(props){
@@ -19,7 +24,7 @@ class Results extends React.Component {
 		let players = queryString.parse(this.props.location.search);
 		api.battle([
 			players.playerOneName,
-			players.playerTowName
+			players.playerTwoName
 		])
 		.then((result)=>{
 			if(result === null){
@@ -50,7 +55,7 @@ class Results extends React.Component {
 		let loading = this.state.loading;
 
 		if(loading === true){
-			return <p>Loading</p>
+			return <Loading />
 		}
 
 		if(error){
