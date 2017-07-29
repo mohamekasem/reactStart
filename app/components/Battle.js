@@ -1,6 +1,6 @@
 import React from 'react';
 import PlayerInput from './Battle-Child/PlayerInput';
-import PlayarPreview from './Battle-Child/Playar-Preview';
+import PlayerPreview from './Battle-Child/Player-Preview';
 import {Link} from 'react-router-dom';
 
 class Battle extends React.Component{
@@ -18,6 +18,7 @@ class Battle extends React.Component{
 
 	handleSubmit(id, username){
 		this.setState(()=>{
+
 			let newState = {};
 				newState[id + 'Name'] = username;
 				newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200';
@@ -34,6 +35,7 @@ class Battle extends React.Component{
 			return newState;
 		})
 	}
+
 	render(){
 		let match = this.props.match;
 		let playerOneName = this.state.playerOneName;
@@ -54,12 +56,16 @@ class Battle extends React.Component{
 
 					{
 						playerOneImage !== null &&
-						<PlayarPreview 
+						<PlayerPreview 
 							avatar={playerOneImage}
 							username={playerOneName}
-							onReset={this.handleReset}
-							id='playerOne'
-						/>
+						>
+							<button 
+								className='reset'
+								onClick={this.handleReset.bind(null, 'playerOne')}>
+								Reset
+							</button>
+						</PlayerPreview>
 					}
 					{
 						!playerTwoName &&
@@ -70,12 +76,16 @@ class Battle extends React.Component{
 					}
 					{
 						playerTwoImage !== null &&
-						<PlayarPreview 
+						<PlayerPreview 
 							avatar={playerTwoImage}
 							username={playerTwoName}
-							onReset={this.handleReset}
-							id='playerTwo'
-						/>
+						>
+							<button 
+								className='reset'
+								onClick={this.handleReset.bind(null, 'playerTwo')}>
+										Reset
+							</button>
+						</PlayerPreview>
 					}
 				</div>
 				{
