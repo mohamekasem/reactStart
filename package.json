@@ -1,10 +1,14 @@
 {
   "name": "reactstart",
   "version": "1.0.0",
-  "description": "react tt",
+  "description": "react start",
   "main": "index.js",
-  "scripts": {
-    "start": "webpack-dev-server --hot"
+ "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "SET NODE_ENV='production' webpack -p",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy",
+    "te":"webpack"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,7 @@
   "homepage": "https://github.com/mohamekasem/reactstart#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "firebase-tools": "^3.9.1",
     "jquery": "^3.2.1",
     "prop-types": "^15.5.10",
     "query-string": "^5.0.0",
