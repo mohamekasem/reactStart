@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlayerPreview from '../Battle-Child/Player-Preview'
+import PlayerPreview from '../Battle-Child/Player-Preview';
 
 const Profile = (props)=>{
 let info = props.info;
-console.log(info)
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>
       <ul className='space-list-items'>
@@ -19,6 +18,7 @@ console.log(info)
     </PlayerPreview>
     )
 }
+
 Profile.PropTypes = {
 	info: PropTypes.object.isRquired
 }

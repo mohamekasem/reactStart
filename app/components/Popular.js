@@ -8,6 +8,7 @@ import SelectLanguage from './popular-Child/SelectLanguages';
 
 // import Reusable Component
 import Loading from './Loading'
+
 export default class Popular extends React.Component {
 	constructor (props) {
 		super(props);
